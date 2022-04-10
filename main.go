@@ -453,6 +453,9 @@ func sort_the_test_func_by_the_original_func() []function {
 	}
 
 	for _, v1 := range file_origenal {
+		if len(v1.file_functions) == 0 {
+			continue
+		}
 		test_file_name := return_test_file_name(v1.file_name)
 		file_test, err := find(files_test, func(i int) bool {
 			return test_file_name == files_test[i].file_name
